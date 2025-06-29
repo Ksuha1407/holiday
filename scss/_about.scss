@@ -1,0 +1,93 @@
+@use 'index' as *;
+
+.page {
+    @include page;
+
+
+    @include tablet {
+        [class*="page__"] {
+            padding-block: 32px;
+        }
+    }
+
+
+}
+
+.about {
+
+    // .about__container
+
+    &__container {}
+
+    // .about__header
+
+    &__header {
+        margin-bottom: 32px;
+
+        @include tablet {
+            margin-bottom: 16px;
+        }
+    }
+
+    // .about__content
+
+    &__content {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    // .about__text
+
+    &__text {
+        color: #090909;
+        text-align: center;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: 0.0625em;
+
+        &:not(:last-child) {
+            margin-bottom: 32px;
+
+            @include tablet {
+                margin-bottom: 16px;
+            }
+        }
+
+        & p:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        @include tablet {
+            font-size: 16px;
+        }
+    }
+
+    // .about__button
+
+    &__button {
+        @include button;
+
+        @include hover {
+            &:hover {
+                background-color: rgb(180, 135, 52);
+            }
+        }
+    }
+}
+
+.header-block {
+    @include header-block;
+    // .header-block__title
+
+    &__title {
+        @include tablet {
+            font-size: 2.875rem;
+        }
+    }
+
+    // .header-block__text
+
+    &__text {}
+}
