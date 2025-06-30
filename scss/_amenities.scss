@@ -1,1 +1,133 @@
 @use 'index' as *;
+
+
+.amenities {
+
+
+    // .amenities__header
+
+    &__header {
+        &:not(:last-child) {
+            margin-bottom: 64px;
+        }
+    }
+
+    // .amenities__sections
+
+    &__sections {
+        &:not(:last-child) {
+            margin-bottom: 74px;
+        }
+    }
+
+    // .amenities__section
+
+    &__section {}
+}
+
+
+
+.section-amenities {
+
+    // .section-amenities__title
+
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        color: #000;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 24px;
+        line-height: 1.25;
+        letter-spacing: 0.225rem;
+
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+
+    // .section-amenities__items
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    // .section-amenities__item
+
+    &__item {
+        border-radius: 4px;
+        overflow: hidden;
+        flex-basis: 291px;
+
+        &:nth-child(6n + 3) {
+            flex-basis: 408px;
+        }
+
+        &:nth-child(7n + 4) {
+            flex-basis: 408px;
+        }
+
+
+    }
+
+    // .section-amenities__link
+
+    &__link {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        aspect-ratio: 291 / 286;
+
+
+        &:nth-child(6n + 3) {
+            aspect-ratio: 408 / 286;
+        }
+
+        &:nth-child(7n + 4) {
+            aspect-ratio: 408 / 286;
+        }
+
+
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.2;
+        }
+    }
+
+    // .section-amenities__headline
+
+    &__headline {
+        position: relative;
+        z-index: 2;
+        color: #FFF;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: "Source Sans Pro";
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: 4.2px;
+    }
+
+    // .section-amenities__image
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
