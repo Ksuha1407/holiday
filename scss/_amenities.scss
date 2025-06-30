@@ -19,10 +19,6 @@
             margin-bottom: 74px;
         }
     }
-
-    // .amenities__section
-
-    &__section {}
 }
 
 
@@ -67,8 +63,6 @@
         &:nth-child(7n + 4) {
             flex-basis: 408px;
         }
-
-
     }
 
     // .section-amenities__link
@@ -90,8 +84,6 @@
         &:nth-child(7n + 4) {
             aspect-ratio: 408 / 286;
         }
-
-
 
         &::after {
             content: '';

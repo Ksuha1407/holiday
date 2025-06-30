@@ -541,6 +541,7 @@ body {
 .amenities__sections:not(:last-child) {
   margin-bottom: 74px;
 }
+
 .section-amenities__title {
   text-align: center;
   text-transform: uppercase;
