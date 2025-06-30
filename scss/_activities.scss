@@ -10,69 +10,103 @@
         flex-flow: column nowrap;
         align-items: center;
         gap: 64px;
+
+        @include tablet_b {
+            gap: 44px;
+        }
     }
 
-    // .activities__header
 
-    &__header {}
 
     // .activities__items
 
     &__items {
+        max-width: 951px;
+        margin: 0 auto;
         align-self: stretch;
-    }
-
-    &__row {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         column-gap: 128px;
         row-gap: 96px;
 
-        &:not(:last-child) {
-            margin-bottom: 96px;
+        @include tablet_b {
+            column-gap: 64px;
+            row-gap: 48px;
+        }
+
+        @include tablet {
+            column-gap: 48px;
+            row-gap: 32px;
+        }
+
+        @include mobile {
+            justify-content: center;
+            row-gap: 24px;
+            column-gap: 20px;
         }
     }
+
+
 
     // .activities__item
 
     &__item {
         text-align: center;
-        flex: 1 1 auto;
+        flex: 0 1 auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include mobile {
+            text-align: left;
+            flex-direction: row;
+            justify-content: flex-start;
+            column-gap: 20px;
+            flex: 1 1 100%;
+        }
     }
 
     // .activities__link
 
-    &__link {}
+    &__link {
+        padding-bottom: 8px;
+        border-bottom: 1px solid #D8AE5E;
+        transition: all 0.3s ease;
+
+        @include hover {
+            &:hover {
+                border-bottom: 1px solid #000;
+            }
+        }
+    }
 }
 
-.header-block {
-
-    // .header-block__title
-
-    &__title {}
-
-    // .header-block__text
-
-    &__text {}
-}
 
 .item-activities {
 
     &__image {
         flex-grow: 1;
+        flex: 0 0 40px;
 
         &:not(:last-child) {
             margin-bottom: 16px;
+
+            @include mobile {
+                margin-bottom: 0px;
+            }
         }
     }
 
     // .item-activities__icon
 
-    &__icon {}
+    &__icon {
+        max-width: 100%;
+
+        @include mobile {
+            column-gap: 30px;
+        }
+    }
 
     // .item-activities__label
 
