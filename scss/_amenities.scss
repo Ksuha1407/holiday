@@ -1,5 +1,17 @@
 @use 'index' as *;
 
+.page {
+    @include page;
+
+
+    @include tablet {
+        [class*="page__"] {
+            padding-block: 2rem;
+        }
+    }
+
+
+}
 
 .amenities {
 
@@ -8,7 +20,15 @@
 
     &__header {
         &:not(:last-child) {
-            margin-bottom: 64px;
+            margin-bottom: 4rem;
+
+            @include tablet {
+                margin-bottom: 3rem;
+            }
+
+            @include mobile {
+                margin-bottom: 2rem;
+            }
         }
     }
 
@@ -16,14 +36,24 @@
 
     &__sections {
         &:not(:last-child) {
-            margin-bottom: 74px;
+            margin-bottom: 4.625rem;
+
+            @include tablet {
+                margin-bottom: 3rem;
+            }
+
+            @include mobile {
+                margin-bottom: 2rem;
+            }
         }
     }
+
 }
 
 
 
 .section-amenities {
+
 
     // .section-amenities__title
 
@@ -32,12 +62,16 @@
         text-transform: uppercase;
         color: #000;
         font-family: "Source Sans Pro", sans-serif;
-        font-size: 24px;
+        font-size: 1.5rem;
         line-height: 1.25;
-        letter-spacing: 0.225rem;
+        letter-spacing: 0.225em;
 
         &:not(:last-child) {
-            margin-bottom: 32px;
+            margin-bottom: 2rem;
+        }
+
+        @include mobile {
+            font-size: 1.125rem;
         }
     }
 
@@ -46,22 +80,41 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 0.9375rem;
+
+        @include tablet {
+            justify-content: center;
+        }
+
     }
 
     // .section-amenities__item
 
     &__item {
-        border-radius: 4px;
+        border-radius: 0.25rem;
         overflow: hidden;
-        flex-basis: 291px;
+        flex-basis: 18.1875rem;
 
-        &:nth-child(6n + 3) {
-            flex-basis: 408px;
+
+
+        &:nth-child(6n + 3),
+        &:nth-child(7n + 4) {
+            flex-basis: 25.5rem;
+            aspect-ratio: 408 / 286;
+
+            .section-amenities__link {
+                aspect-ratio: 408 / 286;
+            }
         }
 
-        &:nth-child(7n + 4) {
-            flex-basis: 408px;
+        @include hover {
+            &:hover {
+                .section-amenities__image {
+                    transform: scale(1.05);
+                }
+
+            }
+
         }
     }
 
@@ -72,15 +125,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        padding: 1.25rem;
         text-align: center;
         aspect-ratio: 291 / 286;
 
 
-        &:nth-child(6n + 3) {
-            aspect-ratio: 408 / 286;
-        }
-
+        &:nth-child(6n + 3),
         &:nth-child(7n + 4) {
             aspect-ratio: 408 / 286;
         }
@@ -106,10 +156,19 @@
         text-transform: uppercase;
         text-align: center;
         font-family: "Source Sans Pro";
-        font-size: 28px;
+        font-size: 1.75rem;
         font-weight: 600;
         line-height: 1.25;
-        letter-spacing: 4.2px;
+        letter-spacing: 0.2625em;
+
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
+
+        @include mobile {
+            font-size: 1.125rem;
+        }
     }
 
     // .section-amenities__image
@@ -118,8 +177,36 @@
         position: absolute;
         top: 0;
         left: 0;
+        transition: all 0.4s ease;
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+}
+
+.header-block {
+    @include header-block;
+    // .header-block__title
+
+    &__title {
+        @include tablet {
+            font-size: 2.875rem;
+        }
+
+        @include mobile {
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        @include tablet {
+            &::after {
+                margin-top: 1rem;
+            }
+
+            font-size: 1.125rem;
+        }
+    }
+
+
 }

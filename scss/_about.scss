@@ -6,7 +6,7 @@
 
     @include tablet {
         [class*="page__"] {
-            padding-block: 32px;
+            padding-block: 2rem;
         }
     }
 
@@ -15,24 +15,22 @@
 
 .about {
 
-    // .about__container
 
-    &__container {}
 
     // .about__header
 
     &__header {
-        margin-bottom: 32px;
+        margin-bottom: 2rem;
 
         @include tablet {
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
         }
     }
 
     // .about__content
 
     &__content {
-        max-width: 600px;
+        max-width: 37.5rem;
         margin: 0 auto;
         text-align: center;
     }
@@ -43,24 +41,24 @@
         color: #090909;
         text-align: center;
         font-family: "Source Sans Pro", sans-serif;
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 1.5;
         letter-spacing: 0.0625em;
 
         &:not(:last-child) {
-            margin-bottom: 32px;
+            margin-bottom: 2rem;
 
             @include tablet {
-                margin-bottom: 16px;
+                margin-bottom: 1rem;
             }
         }
 
         & p:not(:last-child) {
-            margin-bottom: 10px;
+            margin-bottom: 0.625rem;
         }
 
         @include tablet {
-            font-size: 16px;
+            font-size: 1rem;
         }
     }
 
@@ -85,9 +83,21 @@
         @include tablet {
             font-size: 2.875rem;
         }
+
+        @include mobile {
+            font-size: 2rem;
+        }
     }
 
-    // .header-block__text
+    &__text {
+        @include tablet {
+            &::after {
+                margin-top: 1rem;
+            }
 
-    &__text {}
+            font-size: 1.125rem;
+        }
+    }
+
+
 }

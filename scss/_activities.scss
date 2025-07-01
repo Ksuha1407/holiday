@@ -1,5 +1,17 @@
 @use 'index' as *;
 
+.page {
+    @include page;
+
+
+    @include tablet {
+        [class*="page__"] {
+            padding-block: 2rem;
+        }
+    }
+
+
+}
 
 .activities {
     background-color: #F4F4F4;
@@ -9,10 +21,10 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        gap: 64px;
+        gap: 4rem;
 
         @include tablet_b {
-            gap: 44px;
+            gap: 2.75rem;
         }
     }
 
@@ -21,29 +33,29 @@
     // .activities__items
 
     &__items {
-        max-width: 951px;
+        max-width: 60.3125rem;
         margin: 0 auto;
         align-self: stretch;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        column-gap: 128px;
-        row-gap: 96px;
+        column-gap: 8rem;
+        row-gap: 6rem;
 
         @include tablet_b {
-            column-gap: 64px;
-            row-gap: 48px;
+            column-gap: 4rem;
+            row-gap: 3rem;
         }
 
         @include tablet {
-            column-gap: 48px;
-            row-gap: 32px;
+            column-gap: 3rem;
+            row-gap: 2rem;
         }
 
         @include mobile {
             justify-content: center;
-            row-gap: 24px;
-            column-gap: 20px;
+            row-gap: 1.5rem;
+            column-gap: 1.25rem;
         }
     }
 
@@ -62,7 +74,7 @@
             text-align: left;
             flex-direction: row;
             justify-content: flex-start;
-            column-gap: 20px;
+            column-gap: 1.25rem;
             flex: 1 1 100%;
         }
     }
@@ -70,13 +82,13 @@
     // .activities__link
 
     &__link {
-        padding-bottom: 8px;
-        border-bottom: 1px solid #D8AE5E;
+        padding-bottom: 0.5rem;
+        border-bottom: 0.0625rem solid #D8AE5E;
         transition: all 0.3s ease;
 
         @include hover {
             &:hover {
-                border-bottom: 1px solid #000;
+                border-bottom: 0.0625rem solid #000;
             }
         }
     }
@@ -87,10 +99,10 @@
 
     &__image {
         flex-grow: 1;
-        flex: 0 0 40px;
+        flex: 0 0 2.5rem;
 
         &:not(:last-child) {
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
 
             @include mobile {
                 margin-bottom: 0px;
@@ -104,7 +116,7 @@
         max-width: 100%;
 
         @include mobile {
-            column-gap: 30px;
+            column-gap: 1.875rem;
         }
     }
 
@@ -116,6 +128,32 @@
         font-family: "Source Sans Pro", sans-serif;
         font-size: 20px;
         line-height: 1.56;
-        letter-spacing: 1px;
+        letter-spacing: 0.0625em;
     }
+}
+
+.header-block {
+    @include header-block;
+    // .header-block__title
+
+    &__title {
+        @include tablet {
+            font-size: 2.875rem;
+        }
+
+        @include mobile {
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        @include tablet {
+            &::after {
+                margin-top: 1rem;
+            }
+
+            font-size: 1.125rem;
+        }
+    }
+
 }
