@@ -1,0 +1,86 @@
+@use 'index' as *;
+
+.page {
+    @include page;
+
+
+    @include tablet {
+        [class*="page__"] {
+            padding-block: 2rem;
+        }
+    }
+
+}
+
+.contacts {
+    background: #F4F4F4;
+    // .contacts__container
+
+    &__container {}
+
+    // .contacts__header
+
+    &__header {}
+
+    // .contacts__items
+
+    &__items {}
+
+    // .contacts__item
+
+    &__item {}
+
+    // .contacts__link
+
+    &__link {}
+
+    // .contacts__link--phone
+
+    &__link--phone {}
+
+    // .contacts__link--mail
+
+    &__link--mail {}
+
+    // .contacts__link--map
+
+    &__link--map {}
+
+    // .contacts__social
+
+    &__social {}
+}
+
+.header-block {
+    @include header-block;
+    // .header-block__title
+
+    &__title {
+        @include tablet {
+            font-size: 2.875rem;
+        }
+
+        @include mobile {
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        @include tablet {
+            &::after {
+                margin-top: 1rem;
+            }
+
+            font-size: 1.125rem;
+        }
+    }
+
+
+}
+
+.social {
+
+    // .social__item
+
+    &__item {}
+}
