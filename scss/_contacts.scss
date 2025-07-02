@@ -1,54 +1,93 @@
 @use 'index' as *;
 
+.animated {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .page {
     @include page;
-
-
-    @include tablet {
-        [class*="page__"] {
-            padding-block: 2rem;
-        }
-    }
 
 }
 
 .contacts {
-    background: #F4F4F4;
+    background-color: #F4F4F4;
     // .contacts__container
 
-    &__container {}
+    &__container {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 4rem;
 
-    // .contacts__header
+        @include tablet {
+            gap: 2rem;
+        }
+    }
 
-    &__header {}
 
     // .contacts__items
 
-    &__items {}
+    &__items {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        gap: 2rem;
 
-    // .contacts__item
+        @include tablet {
+            gap: 1rem;
+        }
+    }
 
-    &__item {}
 
     // .contacts__link
 
-    &__link {}
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        color: #000;
+        text-align: center;
+        line-height: 1.25;
+        letter-spacing: 0.05rem;
+        transition: all 0.3s ease;
+
+        @include hover {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 
     // .contacts__link--phone
 
-    &__link--phone {}
+    &__link--phone {
+        &::before {
+            content: url("../img/contacts/tel.svg");
+        }
+    }
 
     // .contacts__link--mail
 
-    &__link--mail {}
+    &__link--mail {
+        &::before {
+            content: url("../img/contacts/sms.svg");
+        }
+    }
 
     // .contacts__link--map
 
-    &__link--map {}
-
-    // .contacts__social
-
-    &__social {}
+    &__link--map {
+        &::before {
+            content: url("../img/contacts/local.svg");
+        }
+    }
 }
 
 .header-block {
@@ -79,8 +118,12 @@
 }
 
 .social {
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 1rem;
     // .social__item
 
-    &__item {}
+
 }

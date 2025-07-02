@@ -9,6 +9,7 @@ body {
 body {
     font-family: "Sourse Sans Pro", sans-serif;
     font-size: 1rem;
+    color: #000;
 }
 
 .wrapper {
@@ -23,7 +24,7 @@ body {
 }
 
 [class*="__container"] {
-    max-width: 1054px;
+    max-width: 65.875rem;
     padding-inline: 0.9375rem;
     margin: 0 auto;
 }

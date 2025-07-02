@@ -4,13 +4,6 @@
     @include page;
 
 
-    @include tablet {
-        [class*="page__"] {
-            padding-block: 2rem;
-        }
-    }
-
-
 }
 
 .about {
@@ -100,4 +93,15 @@
     }
 
 
+}
+
+.animated {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animated.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

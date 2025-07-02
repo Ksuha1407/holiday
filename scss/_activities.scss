@@ -1,14 +1,18 @@
 @use 'index' as *;
 
+.animated {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .page {
     @include page;
-
-
-    @include tablet {
-        [class*="page__"] {
-            padding-block: 2rem;
-        }
-    }
 
 
 }
@@ -125,10 +129,9 @@
     &__label {
         color: #000;
         text-align: center;
-        font-family: "Source Sans Pro", sans-serif;
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 1.56;
-        letter-spacing: 0.0625em;
+        letter-spacing: 0.0625rem;
     }
 }
 

@@ -1,14 +1,18 @@
 @use 'index' as *;
 
+.animated {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .page {
     @include page;
-
-
-    @include tablet {
-        [class*="page__"] {
-            padding-block: 2rem;
-        }
-    }
 
 
 }
@@ -61,10 +65,9 @@
         text-align: center;
         text-transform: uppercase;
         color: #000;
-        font-family: "Source Sans Pro", sans-serif;
         font-size: 1.5rem;
         line-height: 1.25;
-        letter-spacing: 0.225em;
+        letter-spacing: 0.225rem;
 
         &:not(:last-child) {
             margin-bottom: 2rem;
@@ -155,11 +158,10 @@
         color: #FFF;
         text-transform: uppercase;
         text-align: center;
-        font-family: "Source Sans Pro";
         font-size: 1.75rem;
         font-weight: 600;
         line-height: 1.25;
-        letter-spacing: 0.2625em;
+        letter-spacing: 0.2625rem;
 
 
         @include tablet {
